@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div class="dress-up-container">
+        <div class="dress-up-flex" id="dress-up-flex">
+
+            <div class="desktop-title">
+                <div class="desktop-title__content">
+                    <h1>Back to the 80s</h1>
+                    <p>It was the decade that gave us E.T, Pac-Man, perms, mullets, 
+                        shoulder pads and acid-wash denim - it’s no wonder the 80s is 
+                        still much-loved era. From÷ the fashion to the music, we’ve rounded 
+                        up some of our favourite 80s icons. The best part? YOU get to 
+                        dress them…
+                    </p>
+                    <a class="fast-track play-btn" onclick="dissapear()">PLAY DRESS UP</a>
+                </div>
+            </div>
+
+            <div class="dress-up-title flex-col" id="play-title">
+                <h1>Back to the 80s</h1>
+                <p>It was the decade that gave us E.T, Pac-Man, perms, mullets, 
+                    shoulder pads and acid-wash denim - it’s no wonder the 80s is 
+                    still much-loved era. From÷ the fashion to the music, we’ve rounded 
+                    up some of our favourite 80s icons. The best part? YOU get to 
+                    dress them…
+                </p>
+                <a class="fast-track play-btn" onclick="moveRight(-32.95)">PLAY DRESS UP</a>
+            </div>
+
+            <div class="character-selector flex-col" id="character-selector-id">
+            </div>
+
+            <div class="character-game flex-col">
+                <div class="character-dressRoom">
+                    <a class="fast-track back-btn" onclick="goBack(-32.9)"><img src="https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-icon-back_DNT?$PNG%20Alpha%20Transparency$" alt=""></a>
+
+                    <a onclick="saveCharacter()" class="fast-track complete"><img src="https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-icon-complete_DNT?$PNG%20Alpha%20Transparency$" alt=""></a>
+                    
+                    <div class="charectar" >
+                        <div class="absolute-charectar">
+                        </div>
+                        <img class="Bottoms clothing" src="" alt="">
+                        <img class="Tops clothing" src="" alt="">
+                        <img class="Dresses clothing" src="" alt="">
+                        <img class="Jackets clothing" src="" alt="">
+                        <img class="Accessories clothing" src="" alt="">
+                    </div>  
+                
+                    <div class="character-description">
+                        <input type="checkbox" class="read-more-state" id="post-1">
+                        <div class="read-more-wrap">   
+                            <p class="font-sizing read-more-target character-description-id" id="character-description-id"></p>   
+                        </div>
+                        <label for="post-1" class="read-more-trigger"></label>
+                    </div>
+                </div>
+
+                <div class="character-wardrobe">
+                    <div class="character-wardrobe__type">
+                    </div>
+                    <div class="character-wardrobe__elements">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/js/html2canvas.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+</html>

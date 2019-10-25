@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #e8e6e6; }
+  body .dress-up-container {
+    overflow-x: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300%; }
+    body .dress-up-container .flex-col {
+      width: 33%; }
+    body .dress-up-container .avatar-background {
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%; }
+    body .dress-up-container .dress-up-flex {
+      height: 99vh;
+      transition: all 1s ease;
+      display: flex; }
+    body .dress-up-container .dressUpImage {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      height: 90%;
+      transform: translate(-50%, -50%); }
+    body .dress-up-container .desktop-title {
+      display: none; }
+    body .dress-up-container .dress-up-title {
+      text-align: center;
+      display: flex;
+      flex-direction: column; }
+      body .dress-up-container .dress-up-title h1 {
+        padding-top: 10%; }
+      body .dress-up-container .dress-up-title p {
+        line-height: 1.6;
+        font-size: 14px;
+        padding: 5%; }
+      body .dress-up-container .dress-up-title a {
+        font-weight: 600;
+        cursor: pointer; }
+    body .dress-up-container .character-selector {
+      background-color: #FFC6F0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding-top: 2%;
+      margin-left: 0.2%;
+      margin-right: 0.1%; }
+      body .dress-up-container .character-selector .character {
+        width: 43%;
+        text-align: center; }
+        body .dress-up-container .character-selector .character a {
+          color: #000;
+          text-decoration: none; }
+        body .dress-up-container .character-selector .character__avatar {
+          margin-bottom: 5%;
+          border-radius: 50%;
+          height: 0;
+          padding-bottom: 100%;
+          overflow: hidden;
+          width: 100%; }
+    body .dress-up-container .character-game .character-dressRoom {
+      background-image: url("https://images.riverisland.com/is/image/RiverIsland/80sicongame-background-dressingroom-01_DNT?$desktop$");
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+      height: 76%; }
+      body .dress-up-container .character-game .character-dressRoom .back-btn img {
+        width: 20%;
+        padding: 2%; }
+      body .dress-up-container .character-game .character-dressRoom .complete {
+        margin-left: 50%; }
+        body .dress-up-container .character-game .character-dressRoom .complete img {
+          width: 20%;
+          padding: 2%; }
+      body .dress-up-container .character-game .character-dressRoom .charectar .clothing {
+        position: absolute;
+        transform: translate(-50%, -50%); }
+      body .dress-up-container .character-game .character-dressRoom .charectar .Accessories {
+        z-index: 4;
+        left: 36%;
+        top: 63%;
+        height: 25%; }
+      body .dress-up-container .character-game .character-dressRoom .charectar .Jackets {
+        left: 50%;
+        top: 33%;
+        height: 33%; }
+      body .dress-up-container .character-game .character-dressRoom .charectar .Dresses {
+        left: 50%;
+        top: 38%;
+        height: 37%; }
+      body .dress-up-container .character-game .character-dressRoom .charectar .Tops {
+        left: 51.2%;
+        top: 32%;
+        height: 24%; }
+      body .dress-up-container .character-game .character-dressRoom .charectar .Bottoms {
+        left: 50%;
+        top: 61%;
+        height: 37%; }
+      body .dress-up-container .character-game .character-dressRoom .read-more-wrap {
+        transition: 1s;
+        position: absolute;
+        text-align: center;
+        top: 0%;
+        left: 105%;
+        height: 125%;
+        padding: 5%;
+        width: 90%;
+        z-index: 4;
+        background-image: url("https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-background-green_DNT?$desktop$");
+        background-size: cover;
+        background-repeat: no-repeat; }
+        body .dress-up-container .character-game .character-dressRoom .read-more-wrap .font-sizing {
+          background-color: #D6F5E7;
+          padding: 15%; }
+          body .dress-up-container .character-game .character-dressRoom .read-more-wrap .font-sizing h1 {
+            margin-top: 0; }
+      body .dress-up-container .character-game .character-dressRoom .read-more-state:checked ~ .read-more-wrap {
+        left: 0; }
+      body .dress-up-container .character-game .character-dressRoom .read-more-trigger {
+        cursor: pointer;
+        content: 'Read more';
+        background-color: #fff;
+        display: inline-block;
+        color: #666;
+        font-size: 20px;
+        transform: rotate(-90deg);
+        left: 75%;
+        position: absolute;
+        width: 40%;
+        top: 65%;
+        text-align: center;
+        padding: 1%;
+        border-radius: 10px 10px 0px 0px;
+        z-index: 5; }
+      body .dress-up-container .character-game .character-dressRoom input[type="checkbox" i] {
+        display: none; }
+      body .dress-up-container .character-game .character-dressRoom .read-more-state ~ .read-more-trigger::after {
+        content: 'Read more';
+        padding-bottom: 0.5%; }
+      body .dress-up-container .character-game .character-dressRoom .read-more-state:checked ~ .read-more-trigger::after {
+        content: 'Dress me!';
+        padding-bottom: 0.5%; }
+    body .dress-up-container .character-game .character-wardrobe {
+      height: 100%; }
+      body .dress-up-container .character-game .character-wardrobe__type {
+        background-color: #000;
+        display: flex;
+        justify-content: space-around;
+        padding: 4% 0;
+        width: 99.4%;
+        overflow: scroll; }
+        body .dress-up-container .character-game .character-wardrobe__type button {
+          background-color: transparent;
+          border: none;
+          font-size: 14px;
+          font-weight: 600;
+          cursor: pointer;
+          color: #fff; }
+      body .dress-up-container .character-game .character-wardrobe__elements {
+        background-color: #d8d8d8;
+        width: 100%;
+        height: 16vh;
+        display: flex;
+        justify-content: space-around; }
+        body .dress-up-container .character-game .character-wardrobe__elements .clothesButton {
+          width: 25%; }
+
+@media only screen and (min-width: 900px) {
+  body .dress-up-container {
+    overflow-x: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; }
+    body .dress-up-container .dress-up-flex {
+      transform: translateX(0) !important; }
+      body .dress-up-container .dress-up-flex .desktop-title {
+        display: block;
+        z-index: 10;
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        background-color: #e9e6e6;
+        text-align: center; }
+        body .dress-up-container .dress-up-flex .desktop-title__content {
+          padding: 15%; }
+          body .dress-up-container .dress-up-flex .desktop-title__content p {
+            margin-bottom: 4%; }
+      body .dress-up-container .dress-up-flex .dress-up-title {
+        display: none; }
+      body .dress-up-container .dress-up-flex .back-btn {
+        display: none; }
+      body .dress-up-container .dress-up-flex .complete {
+        margin-left: 77% !important; }
+      body .dress-up-container .dress-up-flex .read-more-trigger {
+        display: none !important; } }
+
+/*# sourceMappingURL=style.css.map */

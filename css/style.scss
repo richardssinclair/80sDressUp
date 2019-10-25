@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e8e6e6;
+
+    .dress-up-container {
+        overflow-x: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 300%;
+        // border: 1px solid;
+
+        .flex-col{
+            width: 33%;
+        }
+
+        .avatar-background {
+            background-repeat: no-repeat;
+            background-size: cover; 
+            width: 100%;
+        }
+
+        .dress-up-flex {
+            height: 99vh;
+            transition: all 1s ease;
+            display: flex;
+        }
+
+        .dressUpImage {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 90%;
+            transform: translate(-50%, -50%);
+        }
+
+        .desktop-title {
+            display: none;
+        }
+
+        .dress-up-title {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            
+            h1 {
+                padding-top: 10%
+            }
+            p {
+                line-height: 1.6;
+                font-size: 14px;
+                padding: 5%
+            }
+            a {
+                font-weight: 600;
+                cursor:pointer;
+            }
+        }
+
+        .character-selector {
+            // New styels
+            background-color: #FFC6F0;
+            // new styles end
+
+
+            // border: 1px solid;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding-top: 2%;
+
+            margin-left: 0.2%;
+            margin-right: 0.1%;
+            .character {
+                width: 43%;
+                text-align: center;
+
+                a {
+                    color: #000;
+                    text-decoration: none;
+                }
+
+                &__avatar {
+                    // new stylle
+                    margin-bottom: 5%;
+                    // new style end
+                    border-radius: 50%;
+                    height: 0;
+                    padding-bottom: 100%;
+                    overflow: hidden;
+                    width: 100%;
+                }
+            }
+        }
+
+        // Character Game container
+        .character-game {
+            // min-width: 100%;
+
+            .character-dressRoom {
+
+                // background-color: #9b9b9b;
+                // NEW STYLES START
+                background-image: url("https://images.riverisland.com/is/image/RiverIsland/80sicongame-background-dressingroom-01_DNT?$desktop$");
+                background-size: cover;
+                background-repeat: no-repeat;
+                position: relative;
+                // NEW STYLES END
+                // border: 1px solid;
+                height: 76%;
+
+                .back-btn {
+                    img {
+                        width: 20%;
+                        padding: 2%;
+                    } 
+                }
+
+                .complete {
+                    margin-left: 50%;
+
+                    img {
+                        
+                        width: 20%;
+                        padding: 2%;
+                    } 
+                }
+
+                .charectar {
+                    .clothing {
+                        position: absolute;
+                        transform: translate(-50%, -50%);
+                        // width: 20%;
+                    }
+
+                    .Accessories {
+                        z-index: 4;
+                        left: 36%;
+                        top: 63%;
+                        height: 25%;
+
+                    }
+
+                    .Jackets {
+                        left: 50%;
+                        top: 33%;
+                        height: 33%;
+                    }
+
+                    .Dresses {
+                        left: 50%;
+                        top: 38%;
+                        height: 37%;
+                    }
+
+                    .Tops {
+                        left: 51.2%;
+                        top: 32%;
+                        height: 24%;
+                    }
+                    .Bottoms {
+                        left: 50%;
+                        top: 61%;
+                        height: 37%;
+
+                    }
+
+
+                }
+
+                .read-more-wrap {
+                    transition: 1s;
+                    position: absolute;
+                    text-align: center;
+                    top: 0%;
+                    left: 105%;
+                    height: 125%;
+                    padding: 5%;
+                    width: 90%;
+                    z-index: 4;
+
+                    background-image: url("https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-background-green_DNT?$desktop$");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+
+                    .font-sizing {
+                        background-color: #D6F5E7;
+                        padding: 15%;
+
+                        h1 {
+                            margin-top: 0;
+                        }
+                    }
+                    // background-color: #e9e6e6;
+                }
+
+                // Read more functionality
+                .read-more-target {
+                    // transition: 1s;  
+                }
+
+                .read-more-state:checked~.read-more-wrap {
+                    left: 0;
+                    // transition: 1s;
+                }
+
+                .read-more-trigger {
+                    cursor: pointer;
+                    content: 'Read more';
+                    background-color: #fff;
+                    display: inline-block;
+                    color: #666;
+                    font-size: 20px;
+                    transform: rotate(-90deg);
+                    left: 75%;
+                    position: absolute;
+                    width: 40%;
+                    top:65%;
+                    text-align: center;
+                    padding:1%;
+
+
+                    border-radius: 10px 10px 0px 0px;
+                    z-index: 5;
+                }
+
+                // input[type='checkbox']~label:not(.label-like):before {
+                //     display: none;
+                // }
+
+                input[type="checkbox" i]{
+                    display: none;
+                }
+
+                .read-more-state~.read-more-trigger::after {
+                    content: 'Read more';
+                    padding-bottom: 0.5%;
+                }
+
+                .read-more-state:checked~.read-more-trigger::after {
+                    content: 'Dress me!';
+                    padding-bottom: 0.5%;
+                }
+            }
+            .character-wardrobe {
+                height: 100%;
+                
+                &__type {
+                    // new styles
+                    background-color: #000;
+                    
+                    display: flex;
+                    justify-content: space-around;
+                    // border: 1px solid;
+                    padding: 4% 0;
+                    width: 99.4%;
+                    overflow: scroll;
+
+                    button {
+                        background-color: transparent;
+                        border: none;
+                        font-size: 14px;
+                        font-weight: 600;
+                        cursor: pointer;
+
+                        // new styles
+                        color: #fff;
+                    }
+                }
+
+                &__elements {
+                    background-color: #d8d8d8;
+                    width: 100%;
+                    height: 16vh;
+                    display: flex;
+                    justify-content: space-around;
+
+                    .clothesButton {
+                        width: 25%;
+                    }
+                    
+                    .element{
+                        // border: 1px solid;
+                        // width: 18%;
+                        // display: flex;
+                        // justify-content: center;
+
+                        .clothesSelect {
+                            // margin: 0 auto;
+                            // max-height: 100px;
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+}
+
+@media only screen and (min-width: 900px) {
+
+body {
+
+    .dress-up-container {
+        overflow-x: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        .dress-up-flex {
+            transform: translateX(0)!important;
+
+            .desktop-title {
+                display: block;
+
+                z-index: 10;
+                width: 100%;
+                position: absolute;
+                height: 100%;
+                background-color: #e9e6e6;
+
+                text-align: center;
+
+                &__content {
+                    padding: 15%;
+
+                    p {
+                        margin-bottom: 4%;
+                    }
+                }
+
+            }
+
+            .dress-up-title {
+                display: none;
+            }
+
+            .back-btn {
+                display: none;
+            }
+
+            .complete {
+                margin-left: 77%!important;
+            }
+
+            .read-more-trigger {
+                display: none !important;
+            }
+        }
+    }
+}
+}
