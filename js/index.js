@@ -236,13 +236,14 @@ class Person {
 
             console.log('i ran')
             event.preventDefault();
-            
+
             clearCharacter();
 
             document.querySelector('.absolute-charectar').innerHTML += `
             <img class="dressUpImage" src="${this.state.dressUpPic}" alt="${this.state.name} Avatar">
             `;
             moveRight('-66.78');
+            console.log("classes are cool")
 
             document.querySelectorAll('.character-description-id')[0].innerHTML += `<h1 class="character-name">${this.state.name}</h1>
             <p>${this.state.description}</p>
