@@ -45,133 +45,198 @@ const characters = [{
 const clothes2 = [
     // Accessories
     {
-        id: 'accessory1',
-        type: 'Accessories',
+        id: 'acy1',
+        type: 'accessories',
         item: 'https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-clothing-accessories01_DNT?$PNG%20Alpha%20Transparency$'
     },{
-        id: 'accessory2',
-        type: 'Accessories',
+        id: 'acy2',
+        type: 'accessories',
         item: 'https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-clothing-accessories02_DNT?$PNG%20Alpha%20Transparency$'
     },
     // Bottoms
     {
-        id: 'bottom1',
-        type: 'Bottoms',
+        id: 'bm1',
+        type: 'bottoms',
         item: 'https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-clothing-bottoms01_DNT?$PNG%20Alpha%20Transparency$'
     },
     {
-        id: 'bottom2',
-        type: 'Bottoms',
+        id: 'bm2',
+        type: 'bottoms',
         item: 'https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-clothing-bottoms02_DNT?$PNG%20Alpha%20Transparency$'
     },
     {
-        id: 'bottom3',
-        type: 'Bottoms',
+        id: 'bm3',
+        type: 'bottoms',
         item: 'https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-clothing-bottoms04_DNT?$PNG%20Alpha%20Transparency$'
     },
     {
-        id: 'bottom4',
-        type: 'Bottoms',
+        id: 'bm4',
+        type: 'bottoms',
         item: 'https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-clothing-bottoms03_DNT?$PNG%20Alpha%20Transparency$'
     },
     // Dresses
     {
-        id: 'dresses1',
-        type: 'Dresses',
+        id: 'ds1',
+        type: 'dresses',
         item: 'https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-clothing-dresses01_DNT?$PNG%20Alpha%20Transparency$' 
     },
     {
-        id: 'dresses2',
-        type: 'Dresses',
+        id: 'ds2',
+        type: 'dresses',
         item: 'https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-clothing-dresses02_DNT?$PNG%20Alpha%20Transparency$' 
     },
     {
-        id: 'dresses3',
-        type: 'Dresses',
+        id: 'ds3',
+        type: 'dresses',
         item: 'https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-clothing-dresses03_DNT?$PNG%20Alpha%20Transparency$' 
     },
     // Jackets
     {
-        id: 'jackets1',
-        type: 'Jackets',
+        id: 'js1',
+        type: 'jackets',
         item: 'https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-clothing-jacket01_DNT?$PNG%20Alpha%20Transparency$' 
     },
     {
-        id: 'jackets2',
-        type: 'Jackets',
+        id: 'js2',
+        type: 'jackets',
         item: 'https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-clothing-jacket02_DNT?$PNG%20Alpha%20Transparency$' 
     },
     {
-        id: 'jackets3',
-        type: 'Jackets',
+        id: 'js3',
+        type: 'jackets',
         item: 'https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-clothing-jacket03_DNT?$PNG%20Alpha%20Transparency$' 
     },
     // Tops
     {
-        id: 'tops1',
-        type: 'Tops',
+        id: 'ts1',
+        type: 'tops',
         item: 'https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-clothing-top01_DNT?$PNG%20Alpha%20Transparency$' 
     },
     {
-        id: 'tops2',
-        type: 'Tops',
+        id: 'ts2',
+        type: 'tops',
         item: 'https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-clothing-top02_DNT?$PNG%20Alpha%20Transparency$' 
     },
     {
-        id: 'tops3',
-        type: 'Tops',
+        id: 'ts3',
+        type: 'tops',
         item: 'https://images.riverisland.com/is/image/RiverIsland/c20190920-80siconsgame-clothing-top03_DNT?$PNG%20Alpha%20Transparency$' 
     },
 ];
 
-
-function dissapear() {
-    document.querySelectorAll('.desktop-title')[0].style.display="none";
-}
-
-function moveRight(num) {
-    document.getElementById('dress-up-flex').style.transform=`translateX(${num}%)`;      
-}
-
-function clearCharacter() {  
-    document.querySelectorAll('.absolute-charectar')[0].innerHTML = ``;
-    document.querySelectorAll('.character-wardrobe__type')[0].innerHTML = ``;
-    document.querySelectorAll('.character-wardrobe__elements')[0].innerHTML = ``;
-    document.querySelectorAll('.charectar img').forEach( (image) => {
-        image.src = ``;
-    }); 
-    document.querySelector('.read-more-target').innerHTML = ``;
-}
-
-function goBack(num) {
-    document.getElementById('dress-up-flex').style.transform=`translateX(${num}%)`;
-    setTimeout(function() {
-        clearCharacter();
-    }, 1500)  
-}
-
 class Game {
+
     constructor() {
+        this.position = 0;
+        this.characterInit();
+
+        this.state = {
+            character: {
+                characterName: 'empty',
+                characterSrc: ''
+            },
+            accesories: {
+                accessoriesName: 'empty',
+                accessoriesSrc: ''
+            },
+            bottoms: {
+                bottomsName: 'empty',
+                bottomsSrc: ''
+            },
+            dresses: {
+                dressesName: 'empty',
+                dressesSrc: ''
+            },
+            tops: {
+                topsName: 'empty',
+                topsSrc: ''
+            },
+            jackets: {
+                jacketsName: 'empty',
+                jacketsSrc: ''
+            }
+        }
+
+        
     }
 
-    render() {
-    }
-}
 
-let shareLink = {
-    character: '',
-    accessories: '',
-    bottoms: '',
-    dresses: '',
-    jackets: '',
-    tops: ''
-}
-
-class Person {
-    constructor (data){
-        const dressData = [];
-        this.state = {...data, dressData};
+    moveRight = (pos) => {
+        document.getElementById('dress-up-flex').style.transform=`translateX(${pos}%)`;    
     }
+
+    dissapear = () => {
+        document.querySelectorAll('.desktop-title')[0].style.display="none";
+    }
+
+    clearCharacter = () => {  
+        document.querySelectorAll('.absolute-charectar')[0].innerHTML = ``;
+        document.querySelectorAll('.character-wardrobe__type')[0].innerHTML = ``;
+        document.querySelectorAll('.character-wardrobe__elements')[0].innerHTML = ``;
+        document.querySelectorAll('.charectar img').forEach( (image) => {
+            image.src = ``;
+        }); 
+        document.querySelector('.read-more-target').innerHTML = ``;
+    }
+
+    goBack = () => {
+        document.getElementById('dress-up-flex').style.transform=`translateX(${-32.9}%)`;
+        this.clearCharacter();
+        // setTimeout(function() {
+        //     this.clearCharacter()
+        // }, 1500)  
+    }
+
+    characterInit = () => {
+        const container = document.querySelector('#character-selector-id');
+        for (let i = 0; i < characters.length; i++) {
+            const People = new Person(characters[i]);
+            this.renderMugshot(container, People);
+            // const Bob = new Person(characters[1].name, characters[1].description);
+        }
+    }
+
+
+    updateState = (clothingType, clothingName, clothingSrc) => {
+
+        switch(clothingType) {
+            case 'accessories':                 
+                this.state.accesories = {
+                    accessoriesName: clothingName,
+                    accessoriesSrc: clothingSrc
+                }
+                // shareLink.accessories = e.target.title
+                break;
+            case 'bottoms':
+                this.state.bottoms = {
+                    bottomsName: clothingName,
+                    bottomsSrc: clothingSrc
+                }
+                break;
+            case 'dresses':
+                this.state.dresses = {
+                    dressesName: clothingName,
+                    dressesSrc: clothingSrc
+                }
+                break;
+            case 'jackets':
+                this.state.jackets = {
+                    jacketsName: clothingName,
+                    jacketsSrc: clothingSrc
+                }
+                break;
+            case 'tops':
+                this.state.tops = {
+                    topsName: clothingName,
+                    topsSrc: clothingSrc
+                }
+                break;
+            default:
+                console.log('Sorry, we are out of items');
+        }
+        console.log(this.state);
+    }
+
 
     PopulateClothesObject = (e) => {
         var data = [];
@@ -184,73 +249,49 @@ class Person {
                 const clothesbutton = document.createElement('img');
                 clothesbutton.classList.add('clothesButton');
 
-                // dresses the characgter
                 clothesbutton.dataset.position = e.target.innerHTML;
                 var parentTarget = e.target.innerHTML;
-
 
                 clothesbutton.setAttribute('src', clothes2[a].item);
                 clothesbutton.setAttribute('title', clothes2[a].id);
                 document.querySelector('.character-wardrobe__elements').appendChild(clothesbutton);
 
                 clothesbutton.addEventListener('click', (e) => {
-                    this.dressCharacter(e, parentTarget, clothes2[a].type)
+                    this.dressCharacter(e, parentTarget, clothes2[a].type);
+
+                    this.updateState(clothes2[a].type, clothes2[a].id, clothes2[a].item);
+                    // console.log('this one' + clothes2[a].type)
                 });
             }
         }
     }
 
+
     dressCharacter = (e, parentTarget, catagory) =>  {
         const characterClothes = document.querySelectorAll(`.${parentTarget}`)[0];
         characterClothes.setAttribute('src', e.target.src);
-
-        switch(catagory) {
-            case 'Accessories': 
-                console.log('Accessories')
-                shareLink.accessories = e.target.title
-                break;
-            case 'Bottoms':
-                console.log('Bottoms')
-                shareLink.bottoms = e.target.title
-                break;
-            case 'Dresses':
-                console.log('Accessories')
-                shareLink.dresses = e.target.title
-                break;
-            case 'Jackets':
-                console.log('Jackets')
-                shareLink.jackets = e.target.title
-                break;
-            case 'Tops':
-                console.log('Tops')
-                shareLink.tops = e.target.title
-                break;
-            default:
-                console.log('Sorry, we are out of ' + catagory + '.');
-        }   
+            
     }
 
-    addEvents = (div) => {
-        div.addEventListener('click', (event)=>{
-            shareLink.character = this.state.name;
 
-            console.log('i ran')
-            event.preventDefault();
+    addEvents = (div, person) => {
+        div.addEventListener('click', (event) => {
 
-            clearCharacter();
+            // event.preventDefault();
+
+            this.clearCharacter();
 
             document.querySelector('.absolute-charectar').innerHTML += `
-            <img class="dressUpImage" src="${this.state.dressUpPic}" alt="${this.state.name} Avatar">
+            <img class="dressUpImage" src="${person.state.dressUpPic}" alt="${person.state.name} Avatar">
             `;
-            moveRight('-66.78');
-            console.log("classes are cool")
+            this.moveRight(-66.78);
 
-            document.querySelectorAll('.character-description-id')[0].innerHTML += `<h1 class="character-name">${this.state.name}</h1>
-            <p>${this.state.description}</p>
+            document.querySelectorAll('.character-description-id')[0].innerHTML += `<h1 class="character-name">${person.state.name}</h1>
+            <p>${person.state.description}</p>
             `;
 
             let clothesNames = [];
-            for (i = 0; i < clothes2.length; i++) {                
+            for (let i = 0; i < clothes2.length; i++) {                
                 if(!clothesNames.includes(clothes2[i].type)){
                     clothesNames.push(clothes2[i].type);
                     const button = document.createElement('button');
@@ -260,45 +301,123 @@ class Person {
                     button.addEventListener('click', this.PopulateClothesObject);
                 } 
             }
+
+            this.state.character.characterName = person.state.name;
+            console.log(this.state);
         });
     }
 
-    renderMugshot(container) {
 
-        const {dressData} = this.state;
-
-        dressData.forEach((item) => {
-            // console.log(clothes[item[0]][item[1]])
-        })
-
+    renderMugshot = (container, person) => {
+        // console.log(person)
         const div = document.createElement('div');
         div.classList.add('character');
         div.innerHTML = `
-            <a href="${this.state.id}">
-            <div class="character__avatar ${this.state.styleName}">
-                <img class="avatar-background" src="${this.state.profilePic}" alt="${this.state.name} Avatar">
+            <div">
+            <div class="character__avatar ${person.state.styleName}">
+                <img class="avatar-background" src="${person.state.profilePic}" alt="${person.state.name} Avatar">
             </div>
-            ${this.state.name}
-            </a>
+            ${person.state.name}
+            </div>
         `;
         container.appendChild(div);
-        this.addEvents(div);  
-    }  
+        this.addEvents(div, person);  
+    } 
+
+
+    saveCharacter = (dressData) => {
+
+        let theUrl = window.location.href;
+         
+        let characterUrl = this.state.character.characterName;
+        let accessoriesUrl = this.state.accesories.accessoriesName;
+        let bottomsUrl = this.state.bottoms.bottomsName;
+        let dressesUrl = this.state.dresses.dressesName;
+        let jacketsUrl = this.state.jackets.jacketsName;
+        let topsUrl = this.state.tops.topsName;
+
+        let CharUrl = window.location.href + `?character=${characterUrl}&accesories=${accessoriesUrl}&bottoms=${bottomsUrl}&dresses=${dressesUrl}&jackets=${jacketsUrl}&tops=${topsUrl}`;
+
+    
+        console.log(CharUrl)
+
+        const shareDiv = document.createElement('div');
+        const containingDiv = document.querySelectorAll('.character-dressRoom')[0];
+        shareDiv.classList.add('shareMe');
+        shareDiv.innerHTML = `
+        <div>
+            <p>Share your look, don't forget to tag us @riverisland</p>
+            <p>${CharUrl}</p>
+        </div>
+        `
+        // uncomment this when you load the character
+        // containingDiv.appendChild(shareDiv);
+    }
+
+
+    loadingCharacter = () => {
+
+        let currentUrl = window.location.href;
+        let urlSection = currentUrl.split('?')[1];
+        const querySplit = urlSection.split('&');
+        const splitVals = []
+
+        console.log(querySplit)
+
+        for (let i = 0; i < querySplit.length; i++) {
+            splitVals.push(querySplit[i].split('='));
+        }
+
+        for (let j = 0; j < splitVals.length; j++) {
+
+            for (let i = 0; i < clothes2.length; i++){
+
+                if(splitVals[j][0] === clothes2[i].type){
+
+                    // console.log(splitVals[j][0] + clothes2[i].type + ' score ')
+                } 
+            }
+        }
+    }
+    render() {
+    }
 }
 
-const container = document.querySelector('#character-selector-id');
-for (i = 0; i < characters.length; i++) {
-    const People = new Person(characters[i]);
-    People.renderMugshot(container);
-    // const Bob = new Person(characters[1].name, characters[1].description);
+
+class Person {
+    constructor (data)
+    {
+        const dressData = [];
+        this.state = {...data, dressData};
+    }
+    // addEvents = (div) => {}
 }
 
-function saveCharacter(dressData) {
-    let theUrl = window.location.href;
-    console.log(shareLink)
-    console.log(`?char=${shareLink.character}&acc=${shareLink.accessories}&btm=${shareLink.bottoms}&drs=${shareLink.dresses}&jckt=${shareLink.jackets}&top=${shareLink.tops}`);
-    // theUrl = window.location.href += '?char=' + this.state.name;
+const newGame = new Game()
 
-}
+if (window.location.href.includes('?')){
+    newGame.loadingCharacter();
+    console.log('i worked')
+} 
 
 
+
+const goRight = document.querySelectorAll('.startGame')[0];
+goRight.addEventListener('click', () =>{
+    newGame.moveRight(-33)
+});
+
+const goLeft = document.querySelectorAll('.back-btn')[0];
+goLeft.addEventListener('click', () => {
+    newGame.goBack()
+});
+
+const hideTitle = document.querySelectorAll('.startGameDesktop')[0];
+hideTitle.addEventListener('click', () =>{
+    newGame.dissapear();
+})
+
+const saveGame = document.querySelectorAll('.complete')[0];
+saveGame.addEventListener('click', ()=>{
+    newGame.saveCharacter();
+})

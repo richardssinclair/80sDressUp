@@ -77,24 +77,24 @@ body {
       body .dress-up-container .character-game .character-dressRoom .charectar .clothing {
         position: absolute;
         transform: translate(-50%, -50%); }
-      body .dress-up-container .character-game .character-dressRoom .charectar .Accessories {
+      body .dress-up-container .character-game .character-dressRoom .charectar .accessories {
         z-index: 4;
         left: 36%;
         top: 63%;
         height: 25%; }
-      body .dress-up-container .character-game .character-dressRoom .charectar .Jackets {
+      body .dress-up-container .character-game .character-dressRoom .charectar .jackets {
         left: 50%;
         top: 33%;
         height: 33%; }
-      body .dress-up-container .character-game .character-dressRoom .charectar .Dresses {
+      body .dress-up-container .character-game .character-dressRoom .charectar .dresses {
         left: 50%;
         top: 38%;
         height: 37%; }
-      body .dress-up-container .character-game .character-dressRoom .charectar .Tops {
+      body .dress-up-container .character-game .character-dressRoom .charectar .tops {
         left: 51.2%;
         top: 32%;
         height: 24%; }
-      body .dress-up-container .character-game .character-dressRoom .charectar .Bottoms {
+      body .dress-up-container .character-game .character-dressRoom .charectar .bottoms {
         left: 50%;
         top: 61%;
         height: 37%; }
